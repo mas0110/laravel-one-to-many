@@ -15,8 +15,8 @@ class Category extends Model
         'slug'
     ];
 
-    //le categorie sono in relazione one to many
-    //una categoria appartiene a più posts
+    //le categorie sono one to many
+    //una categoria ha più posts
 
     public function posts(): HasMany{
         return $this->hasMany( Post::class );
