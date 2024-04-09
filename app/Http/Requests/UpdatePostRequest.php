@@ -22,7 +22,13 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => [
+                'required',
+                Rule::unique('posts')->ignore($this->post)
+            ],
+            'content' => ['nullable'],
+            'cover_image' => ['nullable', 'image'],
+            'category_id' => ['nullable', 'exists:categories,id'],
         ];
     }
 }

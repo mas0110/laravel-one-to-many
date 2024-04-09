@@ -93,6 +93,8 @@ class PostController extends Controller
         $slug = Post::generateSlug($request->title);
         $val_data['slug'] = $slug;
 
+
+
         if( $request->hasFile('cover_image') ){
             if( $post->cover_image ){
                 Storage::delete($post->cover_image);
